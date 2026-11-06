@@ -1,110 +1,62 @@
-# Unstoppable Plugin Template
+# Unstoppable Memberships
 
-A ready-to-fork scaffold for new **Unstoppable Solutions** WordPress plugins. Click the green **Use this template** button above to spin up a new plugin repo with the same CI, auto-deploy workflow, and Unstoppable Solutions conventions already in place.
+A fast, lightweight WordPress membership plugin: create free membership levels and
+restrict any content by membership, login status, or specific levels — with no
+external services and no account required.
 
-## What's in the box
+Built by [Unstoppable Solutions](https://unstoppablesolutions.app).
 
-- Main plugin file with a WordPress.org-compliant header
-- `includes/class-plugin.php` — stub main class, activation / deactivation / admin-menu hooks already wired
-- `readme.txt` skeleton in the WordPress.org format (Description, Installation, FAQ, Screenshots, Privacy, Changelog, Upgrade Notice sections)
-- `uninstall.php` stub
-- `.github/workflows/plugin-check.yml` — runs the official WordPress Plugin Check on every push and PR
-- `.github/workflows/deploy-to-wporg.yml` — on a published GitHub Release, auto-deploys to WordPress.org SVN (dormant until the plugin is accepted into the directory)
-- `.distignore` so dev-only files (workflows, README.md, SECURITY.md) don't end up in the WordPress.org zip
-- `.gitignore` with sensible defaults for a PHP / WordPress project
-- `CLAUDE.md` — context for future Claude Code sessions working on the repo (release workflow, prefix / main-file naming, phpcs:ignore conventions)
-- Silence `index.php` in every directory
+> This is the **free** plugin, distributed on WordPress.org. Paid memberships and
+> payment processing are provided by a separate premium add-on
+> (`unstoppable-memberships-pro`), which requires this plugin.
 
-## How to use
+## Features
 
-### 1. Create your new repo
+- **Free membership levels** — unlimited, with optional badges.
+- **Content restriction** — posts, pages, and any custom post type, by public /
+  logged-in / any member / specific levels.
+- **Set access in the editor** or inline from the post list via Quick Edit and an
+  **Access** column.
+- **Redirect mode** — send non-members to any page *before* it renders, reliable
+  with Elementor and other page builders (global or per item).
+- **Member account & dashboard** with membership status.
+- **Add members manually** with a fast AJAX user search that scales to large sites.
+- **Member reports** — active members, new signups, cancellations, churn.
+- **One-click page creation** for pricing, register, login, account, and dashboard.
+- **Shortcodes** — `[umem_register]`, `[umem_login]`, `[umem_pricing]`,
+  `[umem_checkout]`, `[umem_account]`, `[umem_member_dashboard]`,
+  `[umem_restrict]`, `[umem_logout_link]`.
 
-Click **Use this template** → **Create a new repository**.
+## Built right
 
-- **Repository name:** `unstoppable-your-plugin-slug` (lowercase-hyphens, must match the WordPress.org slug you plan to submit)
-- **Visibility:** Public
-- Create
+- OOP architecture following the WordPress Plugin Handbook.
+- Security-first: nonces, sanitization, escaping, prepared SQL, capability checks.
+- No inline script or style; all assets enqueued.
+- No external services — everything runs on your own site.
+- Translation-ready, multisite-aware, WooCommerce HPOS compatible.
 
-### 2. Clone it locally
+## Requirements
 
-```bash
-git clone https://github.com/paramedic192/unstoppable-your-plugin-slug.git
-cd unstoppable-your-plugin-slug
-```
+- WordPress 5.8+
+- PHP 7.4+
 
-### 3. Replace the template placeholders
+## Installation
 
-Six tokens appear throughout the files. Replace them everywhere with your real plugin's values:
+1. Install from the WordPress.org directory, or upload the ZIP via
+   **Plugins → Add New → Upload**.
+2. Activate, then go to **Memberships → Dashboard** and follow the setup checklist.
+3. Create a membership level, then use **Memberships → Tools** to create the
+   member-facing pages in one click.
+4. Open any post or page and set **Membership Access** in the editor to restrict it.
 
-| Placeholder | Example value | Where it appears |
-|---|---|---|
-| `__PLUGIN_NAME__` | `Unstoppable My Plugin` | Human-readable name shown to users |
-| `__PLUGIN_SLUG__` | `unstoppable-my-plugin` | Slug, text domain, filenames |
-| `__PLUGIN_PACKAGE__` | `Unstoppable_My_Plugin` | @package annotation, class namespace |
-| `__PLUGIN_SHORT_DESCRIPTION__` | `Does one thing well on your WordPress site.` | Plugin header + readme.txt subtitle |
-| `__PREFIX__` | `UMPL` | 4-letter uppercase prefix for constants / classes |
-| `__prefix__` | `umpl` | Lowercase prefix for option names, table suffixes |
-| `__TAG1__` ... `__TAG5__` | `polls, voting, elections, ballot, surveys` | WordPress.org tags (max 5) |
+## Development
 
-A quick way to do all six at once on macOS / Linux (edit the values first):
-
-```bash
-PLUGIN_NAME="Unstoppable My Plugin"
-PLUGIN_SLUG="unstoppable-my-plugin"
-PLUGIN_PACKAGE="Unstoppable_My_Plugin"
-PLUGIN_DESC="Does one thing well on your WordPress site."
-PREFIX_UPPER="UMPL"
-PREFIX_LOWER="umpl"
-
-# Replace tokens in all tracked text files:
-git ls-files | xargs -I{} sed -i.bak \
-  -e "s|__PLUGIN_NAME__|${PLUGIN_NAME}|g" \
-  -e "s|__PLUGIN_SLUG__|${PLUGIN_SLUG}|g" \
-  -e "s|__PLUGIN_PACKAGE__|${PLUGIN_PACKAGE}|g" \
-  -e "s|__PLUGIN_SHORT_DESCRIPTION__|${PLUGIN_DESC}|g" \
-  -e "s|__PREFIX__|${PREFIX_UPPER}|g" \
-  -e "s|__prefix__|${PREFIX_LOWER}|g" \
-  {}
-
-# Clean up the backup files sed makes:
-find . -name "*.bak" -delete
-
-# Rename the main plugin file to match the slug:
-git mv __PLUGIN_SLUG__.php "${PLUGIN_SLUG}.php"
-```
-
-Then edit `readme.txt` to replace the `__TAG1__` through `__TAG5__` placeholders with your real WordPress.org tags.
-
-### 4. Commit and push
-
-```bash
-git add -A
-git commit -m "Scaffold new plugin from unstoppable-plugin-template"
-git push origin main
-```
-
-The **Plugin Check** workflow will run against the clean scaffold. Fix anything it flags before writing your own code.
-
-### 5. When ready for WordPress.org
-
-- Submit the plugin at https://wordpress.org/plugins/developers/add/
-- Once accepted, add two secrets at **Settings → Secrets and variables → Actions**:
-  - `SVN_USERNAME` — your WordPress.org username
-  - `SVN_PASSWORD` — your WordPress.org SVN password (generate at https://profiles.wordpress.org/<you>/profile/edit/group/3/?screen=svn-password)
-- Create a GitHub Release tagged `v0.1.0` (or whatever your first release version is). The deploy workflow fires and pushes `trunk/` and `tags/` to WordPress.org SVN automatically.
-
-## Conventions
-
-Every plugin created from this template inherits:
-
-- GPL-2.0-or-later license (the exact string the WordPress.org directory requires)
-- Author: Unstoppable Solutions, Author URI: https://unstoppablesolutions.app
-- Contributor: `paramedic192`
-- Four-plus character class / constant prefixes (never `WC_` or any WordPress-reserved prefix)
-- ABSPATH guard at the top of every PHP file
-- Nonces + capability checks on every state change
-- `$wpdb->prepare()` on every database query
-- No outbound HTTP calls unless the plugin is explicitly a service integration (per WordPress.org Guideline 7)
+- CI runs the official WordPress **Plugin Check** on every push and PR
+  (`.github/workflows/plugin-check.yml`).
+- Releases deploy to WordPress.org SVN automatically from a published GitHub
+  Release (`.github/workflows/deploy-to-wporg.yml`).
+- See [`CLAUDE.md`](CLAUDE.md) for the release workflow and org conventions, and
+  [`ROADMAP.md`](ROADMAP.md) for what's planned.
 
 ## License
 

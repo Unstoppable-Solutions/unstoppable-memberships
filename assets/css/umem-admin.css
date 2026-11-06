@@ -1,0 +1,233 @@
+/**
+ * Unstoppable Memberships — admin styles.
+ *
+ * @package Unstoppable_Memberships
+ */
+
+.umem-wrap {
+	max-width: 1100px;
+}
+
+.umem-wrap h1 .umem-version {
+	font-size: 12px;
+	color: #646970;
+	vertical-align: middle;
+	margin-left: 6px;
+}
+
+/* Cards ------------------------------------------------------------------ */
+.umem-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	padding: 20px;
+	margin: 0 0 20px;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.04 );
+}
+
+.umem-card h2 {
+	margin-top: 0;
+}
+
+/* Stat grid -------------------------------------------------------------- */
+.umem-stats {
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax( 180px, 1fr ) );
+	gap: 16px;
+	margin: 0 0 24px;
+}
+
+.umem-stat {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #2271b1;
+	border-radius: 6px;
+	padding: 16px 18px;
+}
+
+.umem-stat-value {
+	display: block;
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #1d2327;
+}
+
+.umem-stat-label {
+	display: block;
+	font-size: 13px;
+	color: #646970;
+	margin-top: 4px;
+}
+
+.umem-stat--good { border-left-color: #00a32a; }
+.umem-stat--warn { border-left-color: #dba617; }
+.umem-stat--bad  { border-left-color: #d63638; }
+
+/* Setup checklist -------------------------------------------------------- */
+.umem-setup-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.umem-setup-steps li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.umem-setup-steps li:last-child {
+	border-bottom: 0;
+}
+
+.umem-step-check {
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	color: #fff;
+	background: #c3c4c7;
+	flex: 0 0 auto;
+}
+
+.umem-step-check.is-done {
+	background: #00a32a;
+}
+
+/* Badges ----------------------------------------------------------------- */
+.umem-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.6;
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.umem-badge--is-active,
+.umem-badge--active,
+.umem-badge--completed,
+.umem-badge--succeeded { background: #edfaef; color: #00761e; }
+
+.umem-badge--is-trial,
+.umem-badge--trialing,
+.umem-badge--pending { background: #fcf6e1; color: #8a6d00; }
+
+.umem-badge--is-cancelled,
+.umem-badge--cancelled,
+.umem-badge--failed,
+.umem-badge--is-expired { background: #fcebeb; color: #b32d2e; }
+
+.umem-badge--is-paused,
+.umem-badge--paused { background: #eef3fa; color: #2c5d8f; }
+
+/* Forms ------------------------------------------------------------------ */
+.umem-form .form-table th {
+	width: 220px;
+}
+
+.umem-form .umem-field-help {
+	color: #646970;
+	font-size: 12px;
+	margin: 4px 0 0;
+}
+
+.umem-inline-fields {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.umem-level-picker {
+	margin-top: 8px;
+	padding: 10px 12px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #f6f7f7;
+}
+
+.umem-hidden {
+	display: none;
+}
+
+/* Quick links ------------------------------------------------------------ */
+.umem-quicklinks {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+.umem-code {
+	font-family: Consolas, Monaco, monospace;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	padding: 2px 6px;
+	font-size: 12px;
+}
+
+@media screen and ( max-width: 782px ) {
+	.umem-form .form-table th {
+		width: auto;
+	}
+}
+
+/* jQuery UI autocomplete (user search) ----------------------------------- */
+.ui-autocomplete {
+	position: absolute;
+	z-index: 10000;
+	max-height: 260px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 4px 0;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.12 );
+}
+
+.ui-autocomplete .ui-menu-item {
+	margin: 0;
+	padding: 0;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper {
+	display: block;
+	padding: 7px 12px;
+	font-size: 13px;
+	color: #1d2327;
+	cursor: pointer;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper.ui-state-active,
+.ui-autocomplete .ui-menu-item-wrapper:hover {
+	background: #2271b1;
+	color: #fff;
+}
+
+#umem_user_selected:not(:empty) {
+	font-weight: 600;
+	color: #00761e;
+}
+
+/* Add Member radio rows ---------------------------------------------------- */
+.umem-radio-line {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.umem-page-list {
+	margin-top: 12px;
+}

@@ -1,0 +1,30 @@
+/**
+ * Unstoppable Memberships — content-restriction metabox + Quick Edit styles.
+ * Loaded on the post/page editor and the post list screen.
+ *
+ * @package Unstoppable_Memberships
+ */
+.umem-hidden {
+	display: none;
+}
+
+.umem-level-picker {
+	margin-top: 6px;
+}
+
+.umem-check-line {
+	display: block;
+	margin: 2px 0;
+}
+
+.umem-half-input {
+	width: 48%;
+}
+
+.umem-qe-levels {
+	margin: 4px 0 0;
+}
+
+.umem-qe-note {
+	margin: 4px 0 0;
+}

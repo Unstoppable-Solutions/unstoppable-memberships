@@ -1,0 +1,111 @@
+# Copyright (C) 2026 Unstoppable Memberships
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Unstoppable Memberships 1.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/support\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-18T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Unstoppable Memberships POT generator\n"
+"X-Domain: unstoppable-memberships\n"
+
+#. Plugin Name
+msgid "Unstoppable Memberships"
+msgstr ""
+
+#: includes/class-umem-shortcodes.php
+msgid "Free"
+msgstr ""
+
+#: templates/account.php
+msgid "Your Memberships"
+msgstr ""
+
+#: templates/account.php
+msgid "Billing History"
+msgstr ""
+
+#: templates/account.php
+msgid "Active"
+msgstr ""
+
+#: templates/account.php
+msgid "Trialing"
+msgstr ""
+
+#: templates/account.php
+msgid "Cancelled"
+msgstr ""
+
+#: templates/account.php
+msgid "Paused"
+msgstr ""
+
+#: templates/account.php
+msgid "Expired"
+msgstr ""
+
+#: templates/account.php
+msgid "You do not have any memberships yet."
+msgstr ""
+
+#: templates/account.php
+msgid "Please log in to view your account."
+msgstr ""
+
+#: templates/account.php
+msgid "Log in"
+msgstr ""
+
+#: templates/account.php includes/class-umem-shortcodes.php
+msgid "Log out"
+msgstr ""
+
+#: templates/pricing.php
+msgid "No membership options are available yet."
+msgstr ""
+
+#: admin/class-umem-admin.php
+msgid "Memberships"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Settings"
+msgstr ""
+
+#: admin/views/reports.php
+msgid "Reports"
+msgstr ""
+
+#: admin/views/license.php admin/class-umem-admin.php
+msgid "License"
+msgstr ""
+
+#: admin/views/license.php
+msgid "License Status"
+msgstr ""
+
+#: admin/views/license.php
+msgid "Activate License"
+msgstr ""
+
+#: admin/views/license.php
+msgid "Deactivate License"
+msgstr ""
+
+#: admin/views/license.php admin/class-umem-admin.php
+msgid "Check for Updates"
+msgstr ""
+
+#: includes/class-umem-admin-notices.php
+msgid "Activate your license to receive updates and support."
+msgstr ""
+
+#: includes/class-umem-admin-notices.php
+msgid "Get Started"
+msgstr ""

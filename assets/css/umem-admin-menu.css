@@ -1,0 +1,24 @@
+/**
+ * Unstoppable Memberships — admin menu branding.
+ * Loaded on every admin screen so the top-level menu keeps its brand colour.
+ *
+ * @package Unstoppable_Memberships
+ */
+#adminmenu .toplevel_page_umem-dashboard .wp-menu-name {
+	color: #f0b849;
+}
+
+#adminmenu .toplevel_page_umem-dashboard:hover .wp-menu-name,
+#adminmenu .toplevel_page_umem-dashboard.current .wp-menu-name,
+#adminmenu .toplevel_page_umem-dashboard.wp-has-current-submenu .wp-menu-name {
+	color: #fff;
+}
+
+#adminmenu .toplevel_page_umem-dashboard .wp-menu-image:before {
+	color: #f0b849;
+}
+
+#adminmenu .toplevel_page_umem-dashboard:hover .wp-menu-image:before,
+#adminmenu .toplevel_page_umem-dashboard.current .wp-menu-image:before {
+	color: #fff;
+}

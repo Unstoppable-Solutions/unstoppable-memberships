@@ -1,16 +1,16 @@
-# __PLUGIN_SLUG__
+# unstoppable-memberships
 
 > This file is for Claude Code sessions working on this repo. For a human-oriented overview see `README.md`.
 
 ## What this plugin does
 
-__PLUGIN_SHORT_DESCRIPTION__
+Create free membership levels and restrict any content by membership, login status, or specific levels — lightweight, no account required.
 
-- **Main PHP file:** `__PLUGIN_SLUG__.php`
-- **Code prefix:** `__PREFIX___` (constants / class prefix); `__prefix___` (lowercase for options / tables)
-- **Package:** `__PLUGIN_PACKAGE__`
-- **WordPress.org slug:** `__PLUGIN_SLUG__`
-- **WP.org URL:** https://wordpress.org/plugins/__PLUGIN_SLUG__/
+- **Main PHP file:** `unstoppable-memberships.php`
+- **Code prefix:** `UMEM_` (constants / class prefix); `umem_` (lowercase for options / tables)
+- **Package:** `Unstoppable_Memberships`
+- **WordPress.org slug:** `unstoppable-memberships`
+- **WP.org URL:** https://wordpress.org/plugins/unstoppable-memberships/
 
 ## Base44 Pro mapping
 
@@ -23,8 +23,8 @@ Releases are deployed to WordPress.org SVN automatically by GitHub Actions. The 
 
 1. Finish feature work on `main`.
 2. Bump the version in **all** of these:
-   - `__PLUGIN_SLUG__.php` — `Version:` header
-   - `__PLUGIN_SLUG__.php` — `__PREFIX___VERSION` constant (if present)
+   - `unstoppable-memberships.php` — `Version:` header
+   - `unstoppable-memberships.php` — `UMEM_VERSION` constant (if present)
    - `readme.txt` — `Stable tag:`
    - `readme.txt` — add a `== Changelog ==` entry
 3. Commit and push `main`.
@@ -37,7 +37,7 @@ Every push and PR runs the official WordPress Plugin Check against the codebase 
 
 **Secrets used by deploy:** `SVN_USERNAME`, `SVN_PASSWORD` — org-level secrets on `unstoppable-solutions`. Nothing per-repo.
 
-Both workflows carry an `if: ${{ ! github.event.repository.is_template }}` guard, so they are inert on the template itself (where placeholder tokens like `__PLUGIN_SLUG__` would otherwise fail Plugin Check parsing).
+Both workflows carry an `if: ${{ ! github.event.repository.is_template }}` guard, so they are inert on the template itself (where placeholder tokens like `unstoppable-memberships` would otherwise fail Plugin Check parsing).
 
 ## Known phpcs:ignores specific to this plugin
 
@@ -64,4 +64,4 @@ _(none yet — add here as you ignore specific checks, one bullet per site, with
 
 ## Repository layout
 
-Standard WordPress plugin layout — `__PLUGIN_SLUG__.php` is the bootstrap, `includes/` holds the classes, `assets/` holds CSS/JS, `languages/` holds the `.pot`, `readme.txt` is the WP.org directory listing, `.github/` holds the CI and deploy workflows.
+Standard WordPress plugin layout — `unstoppable-memberships.php` is the bootstrap, `includes/` holds the classes, `assets/` holds CSS/JS, `languages/` holds the `.pot`, `readme.txt` is the WP.org directory listing, `.github/` holds the CI and deploy workflows.
